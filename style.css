@@ -1,5 +1,167 @@
-card {
+@import url('https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@500;700;900&display=swap');
+
+/* ========== VARIABLES ========== */
+:root {
+/* Primary */
+--pale-blue: hsl(225, 100%, 94%);
+--bright-blue: hsl(245, 75%, 52%);
+
+/* Neutral */
+--very-pale-blue: hsl(225, 100%, 98%);
+--desaturated-blue: hsl(224, 23%, 55%);
+--dark-blue: hsl(223, 47%, 23%);
+--white: #FFFFFF
+}
+
+/* ========== BASE STYLING ========== */
+html {
+  box-sizing: border-box;
+}
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+/* ========== MAIN CONTENT ========== */
+body {
+  background-color: var(--pale-blue);
+  font-family: 'Red Hat Display', sans-serif;
+  background-image: url(images/pattern-background-desktop.svg);
+  background-repeat: repeat-x;
+  background-size: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100vh;
+}
+
+.card {
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-direction: column;
+  max-width: 480px;
+  height: 660px;
+  border-radius: 20px;
+  background-color: var(--white);
+  margin: 160px auto;
+  box-shadow: 0px 20px 20px rgba(0, 0, 150, 0.10);
+}
+
+.card__image {
+  width: 100%;
+  border-radius: 20px 20px 0 0;
+}
+
+.card__text {
+  text-align: center;
+  margin: 20px 30px 8px 30px;
+  padding: 0 40px;
+}
+
+.card__title {
+  margin-top: 30px;
+  font-weight: 900;
+  color: var(--dark-blue);
+}
+
+.card__body {
+  color: var(--desaturated-blue);
+  line-height: 1.5;
+}
+
+.card__payment {
+  display: flex;
+  background-color: var(--very-pale-blue);
+  width: 75%;
+  align-items: center;
+  border-radius: 15px;
+  margin-bottom: 30px;
+  padding: 5px;
+}
+
+.card__payment__item1 {
+  flex: 1;
+  display: flex;
+}
+
+.card__payment__image__container {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card__payment__text {
+  flex: 2;
+}
+
+.card__payment__title {
+  font-weight: 900;
+  color: var(--dark-blue);
+  margin-bottom: -0.8em;
+  margin-top: 1rem;
+}
+
+.card__payment__body {
+  flex: 3;
+  color: var(--desaturated-blue);
+}
+
+.card__payment__btn {
+  font-size: 14px;
+  font-weight: 700;
+  margin-right: 25px;
+  text-underline-offset: 0.7px;
+  color: var(--bright-blue);
+}
+
+.card__payment__btn:active {
+  text-decoration: none;
+  color: var(--desaturated-blue);
+}
+
+.card__btn-proceed {
+  background-color: var(--bright-blue);
+  color: white;
+  font-weight: 700;
+  padding: 15px 0;
+  border-radius: 10px;
+  cursor: pointer;
+	box-shadow: 0px 3px 30px rgba(0, 0, 255, 0.4);
+  margin-top: 10px;
+  width: 75%;
+  text-align: center;
+}
+
+.card__btn-proceed:active {
+  background-color: var(--desaturated-blue);
+}
+
+.card__btn-cancel {
+  font-weight: 700;
+  margin: 30px 0 120px 0;
+  cursor: pointer;
+  color: var(--desaturated-blue);
+}
+
+.card__btn-cancel:active {
+  font-weight: 900;
+  color: var(--dark-blue);
+}
+
+/* ========== MEDIA QUERIES ========== */
+@media (max-width: 560px) {
+  .card {
+    max-width: 95%;
+    height: 70vh;
+    font-size: 12px;
+  }
+}
+
+/* ========== ATTRIBUTION ========== */
+.attribution {
+  font-size: 11px; text-align: center;
+}
+.attribution a {
+  color: hsl(228, 45%, 44%);
 }
